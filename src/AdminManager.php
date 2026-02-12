@@ -47,7 +47,6 @@ class AdminManager
     public function getUser(int $id, MysqlClient $client): Admin|null
     {
         $result = await($client->query('SELECT id,username FROM admins WHERE id = ?', [$id]));
-        assert($result instanceof MysqlResult);
 
         $user = $result->resultRows[0] ?? null;
         if ($user === null) {
