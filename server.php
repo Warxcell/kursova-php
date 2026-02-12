@@ -20,6 +20,8 @@ use React\Filesystem\AdapterInterface;
 use React\Filesystem\Factory;
 use React\Mysql\MysqlClient;
 
+use Symfony\Component\Dotenv\Dotenv;
+
 use function React\Async\await;
 use function React\Promise\all;
 
@@ -30,14 +32,18 @@ error_reporting(E_ALL);
 
 require __DIR__ . '/vendor/autoload.php';
 
+// you can also load several files
+$dotenv = new Dotenv();
+$dotenv->loadEnv(__DIR__ . '/.env');
+
 $pool = new \ReactphpX\MySQL\Pool(
-    uri: 'root:IyNHgJ4Zp34c8Gqk@192.168.58.2:30900/kursova?timeout=5',
+    uri: $_ENV['MYSQL_DSN'],
     minConnections: 2,
     maxConnections: 10,
     waitQueue: 100,
     waitTimeout: 50,
 );
-$redis = new Clue\React\Redis\RedisClient('192.168.58.2:30901');
+$redis = new Clue\React\Redis\RedisClient($_ENV['REDIS_DSN']);
 
 $engine = new Engine(__DIR__ . '/templates');
 

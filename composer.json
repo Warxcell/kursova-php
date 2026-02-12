@@ -6,7 +6,8 @@
     "reactphp-x/mysql-pool": "^2.0",
     "clue/redis-react": "^3.x-dev",
     "react/filesystem": "^0.2@dev",
-    "ext-imagick": "*"
+    "ext-imagick": "*",
+    "symfony/dotenv": "^8.0"
   },
   "autoload": {
     "psr-4": {

@@ -41,6 +41,7 @@
       <path value="$PROJECT_DIR$/vendor/reactphp-x/pool" />
       <path value="$PROJECT_DIR$/vendor/clue/redis-react" />
       <path value="$PROJECT_DIR$/vendor/reactphp-x/mysql-pool" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dotenv" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
