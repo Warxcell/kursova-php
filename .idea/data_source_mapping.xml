@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/f56867a7-3733-4c2c-b273-f866b1dddb7b/console.sql" value="f56867a7-3733-4c2c-b273-f866b1dddb7b" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/f56867a7-3733-4c2c-b273-f866b1dddb7b/console_1.sql" value="f56867a7-3733-4c2c-b273-f866b1dddb7b" />
+    <file url="file://$PROJECT_DIR$/src/Controller/Contact.php" value="f56867a7-3733-4c2c-b273-f866b1dddb7b" />
+    <file url="file://$PROJECT_DIR$/src/Controller/ContactAdmin.php" value="f56867a7-3733-4c2c-b273-f866b1dddb7b" />
+    <file url="file://$PROJECT_DIR$/src/Controller/Page.php" value="f56867a7-3733-4c2c-b273-f866b1dddb7b" />
+    <file url="file://$PROJECT_DIR$/src/Controller/PagesEdit.php" value="f56867a7-3733-4c2c-b273-f866b1dddb7b" />
+    <file url="file://$PROJECT_DIR$/src/PageManager.php" value="f56867a7-3733-4c2c-b273-f866b1dddb7b" />
+  </component>
+</project>

@@ -1,0 +1,14 @@
+/*RESET*/
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, p {
+    margin: 0 0 20px;
+    font-family: Arial, sans-serif;
+}

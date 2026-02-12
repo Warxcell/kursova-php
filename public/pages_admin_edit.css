@@ -1,0 +1,131 @@
+.new-gallery {
+    margin: 0;
+    padding-left: 22px; /* място за числата */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .new-gallery__item {
+        display: block; /* едно под друго */
+        width: 125px;
+        height: 125px;
+        cursor: move;
+    }
+
+    .new-gallery__img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border: solid 2px #333;
+        border-radius: 10px;
+    }
+}
+
+form {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 5px;
+    width: 100%;
+}
+
+form input:not([type="checkbox"]) {
+    padding: 5px;
+    font-size: 18px;
+    border: solid 1px #333;
+    border-radius: 3px;
+    width: 100%;
+}
+
+form textarea {
+    padding: 5px;
+    font-size: 18px;
+    border: solid 1px #333;
+    border-radius: 3px;
+    width: 100%;
+    min-height: 100px;
+}
+
+button {
+    padding: 10px 25px;
+    font-size: 20px;
+    background-color: #82caff;
+    border: solid 1px #82caff;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: all .5s ease-in;
+}
+
+button:hover {
+    color: #82caff;
+    background-color: #fff;
+}
+
+/* Custom checkbox (include_in_menu) */
+form label > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+form input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 22px;
+    height: 22px;
+    border: 2px solid #333;
+    border-radius: 6px;
+    background: #fff;
+
+    display: inline-grid;
+    place-content: center;
+
+    cursor: pointer;
+    transition: background-color .15s ease, border-color .15s ease, box-shadow .15s ease, transform .05s ease;
+}
+
+form input[type="checkbox"]::before {
+    content: "";
+    width: 10px;
+    height: 6px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    transform: rotate(-45deg) scale(0);
+    transform-origin: center;
+    transition: transform .12s ease-in-out;
+}
+
+form input[type="checkbox"]:checked {
+    background: #82caff;
+    border-color: #82caff;
+}
+
+form input[type="checkbox"]:checked::before {
+    transform: rotate(-45deg) scale(1);
+}
+
+form input[type="checkbox"]:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(130, 202, 255, 0.35);
+}
+
+form input[type="checkbox"]:active {
+    transform: scale(0.98);
+}
+

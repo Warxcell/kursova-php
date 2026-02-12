@@ -1,0 +1,94 @@
+form {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 8px;
+    width: 100%;
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+form input:not([type="checkbox"]) {
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.3s ease;
+    font-family: Arial, sans-serif;
+}
+
+form input:not([type="checkbox"]):focus {
+    outline: none;
+    border-color: #82caff;
+    box-shadow: 0 0 0 3px rgba(130, 202, 255, 0.15);
+}
+
+form textarea {
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    transition: all 0.3s ease;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+form textarea:focus {
+    outline: none;
+    border-color: #82caff;
+    box-shadow: 0 0 0 3px rgba(130, 202, 255, 0.15);
+}
+
+button {
+    padding: 12px 32px;
+    font-size: 18px;
+    background-color: #82caff;
+    border: 2px solid #82caff;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    color: #82caff;
+    background-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(130, 202, 255, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(130, 202, 255, 0.2);
+}
+
+/* Success message */
+form > div {
+    padding: 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+}

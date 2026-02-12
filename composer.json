@@ -1,0 +1,19 @@
+{
+  "require": {
+    "clue/framework-x": "^0.17",
+    "league/plates": "^3.6",
+    "react/mysql": "^0.7@dev",
+    "reactphp-x/mysql-pool": "^2.0",
+    "clue/redis-react": "^3.x-dev",
+    "react/filesystem": "^0.2@dev",
+    "ext-imagick": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kursova\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.1"
+  }
+}
