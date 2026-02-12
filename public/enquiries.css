@@ -106,3 +106,15 @@
     font-weight: bold;
     font-size: 14px;
 }
+
+/* Empty state */
+.enquiries-list .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    color: #666;
+    font-size: 18px;
+    font-weight: 500;
+    border: 2px dashed #ddd;
+}
