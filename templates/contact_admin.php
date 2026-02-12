@@ -25,15 +25,13 @@ $this->layout('layout', ['title' => 'Запитвания', 'currentAdmin' => $c
                     <?php
                     if (filter_var($enquiry['handled'], FILTER_VALIDATE_BOOL)): ?>
                         <span class="enquiry-status handled">✓ Обработено</span>
-                    <?php
-                    else: ?>
+                    <?php else: ?>
                         <form class="enquiry-form">
                             <button type="submit" name="id" value="<?= $this->e($enquiry['id']) ?>">Отбележи като
                                 обработено
                             </button>
                         </form>
-                    <?php
-                    endif; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         <?php endforeach; ?>
