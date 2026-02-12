@@ -88,29 +88,56 @@ if ($argv[1] ?? null === '--install') {
     $queries = [];
 
     $queries[] = $connection->query(
-        'CREATE TABLE admins (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
+        'CREATE TABLE `admins` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
 )'
     );
 
     $queries[] = $connection->query(
-        'CREATE TABLE enquiries (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    text TEXT NOT NULL,
-    handled BOOLEAN NOT NULL DEFAULT 0,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-);'
+        'CREATE TABLE `enquiries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `text` text NOT NULL,
+  `handled` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+)'
+    );
+    $queries[] = $connection->query(
+        'CREATE TABLE `files` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hash` char(32) DEFAULT NULL,
+  `original_filename` varchar(255) DEFAULT NULL,
+  `size` int(11) DEFAULT NULL,
+  `mime_type` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)'
     );
     $queries[] = $connection->query(
         'CREATE TABLE `pages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `path` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `text` text DEFAULT NULL,
+  `included_in_menu` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `pages_pk` (`path`)
+)'
+    );
+    await(all($queries));
+    $queries = [];
+    $queries[] = $connection->query(
+        'CREATE TABLE `pages_to_files` (
+  `page_id` int(11) NOT NULL,
+  `file_id` int(11) NOT NULL,
+  `order_index` int(11) DEFAULT NULL,
+  PRIMARY KEY (`page_id`,`file_id`),
+  KEY `pages_to_files_order_index_index` (`order_index`)
 )'
     );
 

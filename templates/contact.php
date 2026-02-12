@@ -3,7 +3,7 @@
 $this->layout('layout', ['title' => 'Запитвания', 'currentAdmin' => $currentAdmin, 'pagesInMenu' => $pagesInMenu]); ?>
 
 <?php $this->push('styles') ?>
-<link rel="stylesheet" href="/contact_us.css"/>
+<link rel="stylesheet" href="/form.css"/>
 <?php $this->end() ?>
 
 <form method="post">
