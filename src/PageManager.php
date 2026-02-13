@@ -20,6 +20,24 @@ use const PHP_EOL;
  */
 class PageManager
 {
+
+    /**
+     * @return iterable<int, Page>
+     */
+    public function getPages(MysqlClient $connection): iterable
+    {
+        $result = await($connection->query('SELECT * FROM pages'));
+
+        foreach ($result->resultRows as $row) {
+            yield [
+                'id' => $row['id'],
+                'title' => $row['title'],
+                'text' => $row['text'],
+                'includeInMenu' => filter_var($row['include_in_menu'], FILTER_VALIDATE_BOOLEAN),
+            ];
+        }
+    }
+
     /**
      * @return Page[]
      */

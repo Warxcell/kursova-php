@@ -87,7 +87,7 @@ $app = new FrameworkX\App(
     ContextMiddleware::class,
 );
 
-if ($argv[1] ?? null === '--install') {
+if (($argv[1] ?? null) === '--install') {
     echo 'Starting in INSTALL mode';
 
     echo 'Creating database' . PHP_EOL;
