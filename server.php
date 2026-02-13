@@ -38,14 +38,23 @@ if (file_exists($envFile)) {
     $dotenv->loadEnv($envFile);
 }
 
+function getEnv_(string $name)
+{
+    $env = $_ENV[$name] ?? getenv($name);
+    if ($env === null) {
+        throw new LogicException($name . ' environment variable is not set');
+    }
+    return $env;
+}
+
 $pool = new \ReactphpX\MySQL\Pool(
-    uri: $_ENV['MYSQL_DSN'],
+    uri: getEnv_('MYSQL_DSN'),
     minConnections: 2,
     maxConnections: 10,
     waitQueue: 100,
     waitTimeout: 50,
 );
-$redis = new Clue\React\Redis\RedisClient($_ENV['REDIS_DSN']);
+$redis = new Clue\React\Redis\RedisClient(getEnv_('REDIS_DSN'));
 
 $engine = new Engine(__DIR__ . '/templates');
 
