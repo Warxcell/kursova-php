@@ -5,6 +5,8 @@ declare(strict_types=1);
 use Clue\React\Redis\RedisClient;
 use Kursova\AdminManager;
 use Kursova\ContextMiddleware;
+use Kursova\Controller\DemoAsync;
+use Kursova\Controller\DemoSync;
 use Kursova\Controller\PagesEdit;
 use Kursova\Controller\PagesListing;
 use Kursova\Controller\Contact;
@@ -169,6 +171,8 @@ if ($argv[1] ?? null === '--install') {
 } else {
     $app->get('/', Home::class);
 
+    $app->map(['GET'], '/demo-async', DemoAsync::class);
+    $app->map(['GET'], '/demo-sync', DemoSync::class);
     $app->map(['GET', 'POST'], '/contact-us', Contact::class);
     $app->map(['GET'], '/admin/pages', PagesListing::class);
     $app->map(['GET', 'POST'], '/admin/pages/edit', PagesEdit::class);
