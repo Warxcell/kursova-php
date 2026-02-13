@@ -99,7 +99,6 @@ final readonly class FilesMiddleware
         [$width, $height] = $size->getSize();
         $img->thumbnailImage($width, $height, true, true);
 
-        // fallback: запази оригиналния формат
         $img->setImageFormat($img->getImageFormat());
         $img->stripImage();
 
