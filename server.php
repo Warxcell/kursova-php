@@ -32,9 +32,11 @@ error_reporting(E_ALL);
 
 require __DIR__ . '/vendor/autoload.php';
 
-// you can also load several files
-$dotenv = new Dotenv();
-$dotenv->loadEnv(__DIR__ . '/.env');
+$envFile = __DIR__ . '/.env';
+if (file_exists($envFile)) {
+    $dotenv = new Dotenv();
+    $dotenv->loadEnv($envFile);
+}
 
 $pool = new \ReactphpX\MySQL\Pool(
     uri: $_ENV['MYSQL_DSN'],
@@ -67,7 +69,6 @@ $container = new FrameworkX\Container([
     AdapterInterface::class => $filesystem,
     FilesMiddleware::class => $filesMiddleware
 ]);
-
 
 $app = new FrameworkX\App(
     $container,
