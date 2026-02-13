@@ -1,5 +1,5 @@
 <?php
-$this->layout('layout', ['title' => 'CMS', 'currentAdmin' => $currentAdmin, 'pagesInMenu' => $pagesInMenu]);
+$this->layout('layout', ['title' => 'CMS', ...$context->getLayoutParams()]);
 ?>
 
 <?php $this->push('styles') ?>

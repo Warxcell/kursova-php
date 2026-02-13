@@ -6,6 +6,7 @@ namespace Kursova;
 
 use Clue\React\Redis\RedisClient;
 use Fig\Http\Message\StatusCodeInterface;
+use Kursova\Controller\Page;
 use Kursova\Model\Admin;
 use League\Plates\Engine;
 use Psr\Http\Message\ResponseInterface;
@@ -127,10 +128,26 @@ final class Context
      */
     public function render(string $template, array $data = []): string
     {
-        $data['currentAdmin'] = $this->getCurrentAdmin();
-        $data['pagesInMenu'] = $this->pageManager->getPagesInMenu($this->getConnection());
+        $data['context'] = $this;
 
         return $this->engine->render($template, $data);
+    }
+
+    /**
+     * @return array{currentAdmin: Admin|null, pagesInMenu: Page[], request: ServerRequestInterface}
+     */
+    public function getLayoutParams(): array
+    {
+        return [
+            'currentAdmin' => $this->getCurrentAdmin(),
+            'pagesInMenu' => $this->pageManager->getPagesInMenu($this->getConnection()),
+            'context' => $this,
+        ];
+    }
+
+    public function currentClass(string $path): string
+    {
+        return $path === $this->request->getUri()->getPath() ? 'current' : '';
     }
 
     /**

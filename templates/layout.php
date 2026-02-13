@@ -15,10 +15,12 @@
 <header>
     <div class="container">
         <ul class="main-navigation">
-            <li class="main-navigation-item"><a href="/">Начало</a></li>
-            <li class="main-navigation-item"><a href="/contact-us">Свържи се с нас</a></li>
+            <li class="main-navigation-item <?= $context->currentClass('/') ?>"><a href="/">Начало</a></li>
+            <li class="main-navigation-item <?= $context->currentClass('/contact-us') ?>">
+                <a href="/contact-us">Свържи се с нас</a>
+            </li>
             <?php foreach ($pagesInMenu as $page): ?>
-                <li class="main-navigation-item">
+                <li class="main-navigation-item <?= $context->currentClass($page['path']) ?>">
                     <a href="<?= $this->e($page['path']) ?>">
                         <?= $this->e($page['title']) ?>
                     </a>
@@ -27,13 +29,17 @@
 
             <?php if ($currentAdmin): ?>
                 <li class="main-navigation-divider"></li>
-                <li class="main-navigation-item admin-item"><a href="/admin/contact-us">Запитвания</a></li>
-                <li class="main-navigation-item admin-item"><a href="/admin/pages">Страници</a></li>
+                <li class="main-navigation-item admin-item <?= $context->currentClass('/admin/contact-us') ?>">
+                    <a href="/admin/contact-us">Запитвания</a>
+                </li>
+                <li class="main-navigation-item admin-item <?= $context->currentClass('/admin/pages') ?>">
+                    <a href="/admin/pages">Страници</a>
+                </li>
                 <li class="main-navigation-divider"></li>
                 <li class="main-navigation-item admin-greeting">Здравейте, <?= $currentAdmin->username ?></li>
                 <li class="main-navigation-item"><a href="/logout">Logout</a></li>
             <?php else: ?>
-                <li class="main-navigation-item"><a href="/login">Login</a></li>
+                <li class="main-navigation-item <?= $context->currentClass('/login') ?>"><a href="/login">Login</a></li>
             <?php endif; ?>
         </ul>
     </div>

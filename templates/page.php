@@ -4,7 +4,7 @@ use Kursova\ImageSizeEnum;
 
 $this->layout(
         'layout',
-        ['title' => 'Начална страница', 'currentAdmin' => $currentAdmin, 'pagesInMenu' => $pagesInMenu]
+        ['title' => 'Начална страница', ...$context->getLayoutParams()]
 ) ?>
 
 

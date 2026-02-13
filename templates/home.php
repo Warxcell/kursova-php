@@ -1,6 +1,6 @@
 <?php
 
-$this->layout('layout', ['title' => 'Начална страница', 'currentAdmin' => $currentAdmin, 'pagesInMenu' => $pagesInMenu]) ?>
+$this->layout('layout', ['title' => 'Начална страница', ...$context->getLayoutParams()]) ?>
 
 <h1>Добре дошли в моята курсова работа</h1>
 
@@ -20,7 +20,8 @@ $this->layout('layout', ['title' => 'Начална страница', 'currentA
         <strong>PHP</strong> - Основен програмен език за бекенд логиката
     </li>
     <li>
-        <strong>Framework X (clue/framework-x)</strong> - Асинхронен PHP фреймуърк, базиран на ReactPHP, за изграждане на бързи уеб приложения
+        <strong>Framework X (clue/framework-x)</strong> - Асинхронен PHP фреймуърк, базиран на ReactPHP, за изграждане
+        на бързи уеб приложения
     </li>
     <li>
         <strong>League Plates</strong> - Template engine за генериране на HTML по сигурен и гъвкав начин
@@ -32,13 +33,16 @@ $this->layout('layout', ['title' => 'Начална страница', 'currentA
         <strong>React/MySQL</strong> - Асинхронен MySQL клиент за неблокиращи заявки към базата данни
     </li>
     <li>
-        <strong>Redis</strong> - In-memory хранилище за запазване на потребителски сесии, което прави проекта cloud-ready и позволява хоризонтално мащабиране/скалиране
+        <strong>Redis</strong> - In-memory хранилище за запазване на потребителски сесии, което прави проекта
+        cloud-ready и позволява хоризонтално мащабиране/скалиране
     </li>
     <li>
-        <strong>Imagick</strong> - PHP extension за автоматично преоразмеряване на изображенията в различни размери, оптимизирани за конкретните места в сайта, което намалява времето за зареждане
+        <strong>Imagick</strong> - PHP extension за автоматично преоразмеряване на изображенията в различни размери,
+        оптимизирани за конкретните места в сайта, което намалява времето за зареждане
     </li>
     <li>
-        <strong>PHPStan</strong> - Статичен анализатор за PHP код, който помага за откриване на грешки и подобряване на качеството на кода
+        <strong>PHPStan</strong> - Статичен анализатор за PHP код, който помага за откриване на грешки и подобряване на
+        качеството на кода
     </li>
     <li>
         <strong>HTML5/CSS3</strong> - За структура и дизайн на потребителския интерфейс

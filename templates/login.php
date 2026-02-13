@@ -1,7 +1,5 @@
 <?php
-
-$this->layout('layout', ['title' => 'Вхов в системата', 'currentAdmin' => $currentAdmin, 'pagesInMenu' => $pagesInMenu]
-) ?>
+$this->layout('layout', ['title' => 'Вхов в системата', ...$context->getLayoutParams()]) ?>
 
 <?php $this->push('styles') ?>
 <link rel="stylesheet" href="/form.css"/>

@@ -1,6 +1,6 @@
 <?php
 
-$this->layout('layout', ['title' => 'Запитвания', 'currentAdmin' => $currentAdmin, 'pagesInMenu' => $pagesInMenu]); ?>
+$this->layout('layout', ['title' => 'Запитвания', ...$context->getLayoutParams()]); ?>
 
 <?php $this->push('styles') ?>
 <link rel="stylesheet" href="/form.css"/>
