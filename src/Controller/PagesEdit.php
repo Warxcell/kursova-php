@@ -25,7 +25,6 @@ use function React\Promise\all;
 use function sprintf;
 use function strlen;
 
-use const PHP_EOL;
 use const UPLOAD_ERR_NO_FILE;
 
 final readonly class PagesEdit

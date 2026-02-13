@@ -7,9 +7,6 @@ namespace Kursova\Controller;
 use Kursova\Context;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use React\Http\Message\Response;
-
-use function React\Async\await;
 
 final readonly class Home
 {

@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Kursova;
 
-use http\Exception\InvalidArgumentException;
 use Psr\Http\Message\UploadedFileInterface;
 
 use React\Filesystem\AdapterInterface;

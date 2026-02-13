@@ -6,9 +6,7 @@ namespace Kursova;
 
 use Kursova\Model\Admin;
 use React\Mysql\MysqlClient;
-use React\Mysql\MysqlResult;
 
-use function assert;
 use function password_verify;
 use function React\Async\await;
 

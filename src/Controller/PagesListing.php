@@ -8,12 +8,8 @@ use Kursova\Context;
 use Kursova\PageManager;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use React\Http\Message\Response;
-
-use React\Mysql\MysqlResult;
 
 use function assert;
-use function React\Async\await;
 
 final readonly class PagesListing
 {

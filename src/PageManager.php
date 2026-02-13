@@ -4,15 +4,11 @@ declare(strict_types=1);
 namespace Kursova;
 
 use React\Mysql\MysqlClient;
-use React\Mysql\MysqlResult;
 
 use React\Promise\Promise;
 
-use function assert;
 use function filter_var;
 use function React\Async\await;
-
-use const PHP_EOL;
 
 /**
  * @phpstan-import-type File from FileManager
